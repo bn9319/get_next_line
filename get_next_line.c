@@ -31,7 +31,7 @@ int		get_next_line(int fd, char **line)
 	    *line = strdup(buf);
 	    bzero(buf, i);
 	    i = 0;
-	    printf("%s\n", *line);
+	    //	    printf("%s\n", *line);
 	    return (1);
 	  }
 	  	  buf[i] = tmp[0];
