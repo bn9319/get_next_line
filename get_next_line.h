@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   testmain.c                                         :+:    :+:            */
+/*   get_next_line.h                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: bnijland <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/21 13:50:58 by bnijland      #+#    #+#                 */
-/*   Updated: 2019/11/30 23:23:53 by bnijland      ########   odam.nl         */
+/*   Created: 2019/12/08 22:17:39 by bnijland      #+#    #+#                 */
+/*   Updated: 2019/12/09 16:49:59 by bnijland      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	main(void)
-{
-	int fd;
-	char *line;
-	
-	fd = open("hello.txt", O_RDONLY);
-//	printf("%d\n", fd);
-	while (get_next_line(fd, line) == 1)
-	{
-	  printf("%d\n", get_next_line(fd, line));
-	  	 			}
-//	printf("%d\n", get_next_line(fd, line));
-	return(0);
-}
+# include <unistd.h>
+# include <stdlib.h>
+
+int		get_next_line(int fd, char **line);
+char	*ft_strdup(const char *s1);
+char	*ft_strndup(const char *s1, size_t n);
+size_t	ft_strlen(const char *s1);
+char	*ft_strjoin(char *s1, char *s2);
+
+#endif
